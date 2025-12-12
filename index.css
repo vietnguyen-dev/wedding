@@ -1,0 +1,219 @@
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f0f0f0;
+}
+
+nav {
+  padding: 2%;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2%;
+  font-family: "Imperial Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 0.9;
+}
+
+footer {
+  text-align: center;
+  background-color: #333;
+  padding: 3% 5%;
+  color: white;
+}
+
+button {
+  height: 2.5rem;
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  padding: 2% 4%;
+  margin-bottom: 5%;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+section:not(#wedding) {
+  color: black;
+  padding: 2% 10% 4%;
+  border-radius: 10px;
+}
+section:not(#wedding) div {
+  padding-bottom: 5%;
+}
+section:not(#wedding) h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+section:not(#wedding) h3 {
+  font-size: 1.5rem;
+  font-weight: semi-bold;
+  font-style: italic;
+}
+
+section:not(#wedding) ul {
+  margin-left: 5%;
+}
+
+section:not(#wedding) p {
+  padding-bottom: 5%;
+}
+
+.hidden {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+#wedding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  background-image: url("images/waves.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  /* Styles for tablet, laptop, desktop */
+  nav {
+    padding: 1%;
+  }
+
+  .flex {
+    flex-direction: row;
+    justify-content: center;
+    gap: 5%;
+    width: 50%;
+    margin-left: auto;
+  }
+}
