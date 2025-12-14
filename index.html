@@ -1,27 +1,30 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
 
   <body>
     <header>
       <nav>
-        <img id="menu-icon" src="images/menu.png" alt="menu icon"/>
-        <img id="menu-close-icon" src="images/close.png" class="hidden" alt="close menu icon"/>
+        <img id="menu-icon" src="images/menu.png" alt="menu icon" />
+        <img
+          id="menu-close-icon"
+          src="images/close.png"
+          class="hidden"
+          alt="close menu icon"
+        />
         <ul id="nav-list" class="hidden">
-	  <li> <a href="#our-story">Our Story</a></li>
-	  <li> <a href="#event">Event</a></li>
-	  <li> <a href="#party">Party</a></li>
-	  <li> <a href="#faq">FAQ</a></li>
-	  <li> <a href="#rsvp">RSVP</a></li>
+          <li><a href="#our-story">Our Story</a></li>
+          <li><a href="#event">Event</a></li>
+          <li><a href="#party">Party</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#rsvp">RSVP</a></li>
         </ul>
       </nav>
-    </header>
 
     <section id="wedding">
       <h1>Viet and Vera's Wedding</h1>
@@ -32,69 +35,89 @@
         <a href="#rsvp">RSVP</a>
       </p>
     </section>
-    
+
     <section id="our-story">
       <h2>Our Story</h2>
-      <p>We are celebrating our love and commitment to each other. We started dating November 23rd 2021.</p>
+      <p>
+        We are celebrating our love and commitment to each other. We started
+        dating November 23rd 2021.
+      </p>
     </section>
 
     <section id="event">
-        <h2>Wedding Day</h2>
-        <p>The ceremony will be at Holy Trinity Greek Orthodox Cathedral in Portland, OR at 10:00 AM</p>
-        <p>The reception will be at a Gallery in Portland, OR at 10:00 AM. There will be a 7 course meal and bar until 11pm</p>
+      <h2>Wedding Day</h2>
+      <p>
+        The ceremony will be at Holy Trinity Greek Orthodox Cathedral in
+        Portland, OR at 10:00 AM
+      </p>
+      <p>
+        The reception will be at a Gallery in Portland, OR at 10:00 AM. There
+        will be a 7 course meal and bar until 11pm
+      </p>
     </section>
 
     <section id="party">
-        <h2>Party Details</h2>
-        <article>
+      <h2>Party Details</h2>
+      <article>
         <div>
-            <h3>Groomsmen</h3>
-            <ul>
-                <li>Minh Anh (Matthew) Nguyen</li>
-                <li>Loc Anh (Eric) Nguyen</li>
-                <li>Shawyan Tabari</li>
-                <li>Kevin Vu</li>
-            </ul>
+          <h3>Groomsmen</h3>
+          <ul>
+            <li>Minh Anh (Matthew) Nguyen</li>
+            <li>Loc Anh (Eric) Nguyen</li>
+            <li>Shawyan Tabari</li>
+            <li>Kevin Vu</li>
+          </ul>
         </div>
         <div>
-            <h3>Bridesmaids</h3>
-            <ul>
-                <li>Leah S</li>
-                <li>Ella Zherebnenko</li>
-                <li>Kalina</li>
-                <li>Shayla Pham</li>
-            </ul>
+          <h3>Bridesmaids</h3>
+          <ul>
+            <li>Leah S</li>
+            <li>Ella Zherebnenko</li>
+            <li>Kalina</li>
+            <li>Shayla Pham</li>
+          </ul>
         </div>
         <div>
-        <ul>
+          <ul>
             <h3>Other</h3>
             <li>Ring Bearer: TBD</li>
             <li>Flower Girl: TBD</li>
-        </ul>
+          </ul>
         </div>
-        </article>
+      </article>
     </section>
 
     <section id="faq">
-        <h2>FAQ</h2>
-        <h3>What should I wear?</h3>
-        <p>Suit and Tie or Dress and Heels for Ceremony and Reception</p>
-        <h3>Who to bring?</h3>
-        <p>Due to the ceremony and reception being held at smaller venues, we ask that no children come. Adults only.</p>
+      <h2>FAQ</h2>
+      <h3>What should I wear?</h3>
+      <p>Suit and Tie or Dress and Heels for Ceremony and Reception</p>
+      <h3>Who to bring?</h3>
+      <p>
+        Due to the ceremony and reception being held at smaller venues, we ask
+        that no children come. Adults only.
+      </p>
     </section>
 
     <section id="rsvp">
-        <h2>RSVP</h2>
-        <form id="rsvp-form">
-            <input id="name" type="text" value="" placeholder="Enter Name Here" />
-            <input id="phone" type="text" value="" placeholder="Enter Phone Number Here" />
-            <input id="attendees"type="number" value="" placeholder="Enter # of attendees" />
-            <button type=""submit" disabled="true">SUBMIT</button>
-        </form>
+      <h2>RSVP</h2>
+      <form id="rsvp-form">
+        <input id="name" type="text" value="" placeholder="Enter Name Here" />
+        <input
+          id="phone"
+          type="text"
+          value=""
+          placeholder="Enter Phone Number Here"
+        />
+        <input
+          id="attendees"
+          type="number"
+          value=""
+          placeholder="Enter # of attendees"
+        />
+        <button id="submit-btn" type="submit" disabled="true">SUBMIT</button>
+      </form>
     </section>
   </body>
   <script src="index.js"></script>
-  <footer>
-    Viet Nguyen Development 2025
-  </footer>
+  <footer>Viet Nguyen Development 2025</footer>
 </html>
