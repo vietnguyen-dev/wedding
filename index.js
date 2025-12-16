@@ -74,5 +74,6 @@ attendeesEl.addEventListener("input", checkValues);
 
 rsvp.addEventListener("submit", async (e) => {
   e.preventDefault();
-  window.location.href = "thanks.html";
+  console.log(nameVal, phoneVal, attendeesVal);
+  //window.location.href = "thanks.html";
 });
