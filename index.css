@@ -1,179 +1,424 @@
+/* ============================================
+   WEDDING WEBSITE - MODERN STYLES
+   ============================================ */
+
+/* CSS Custom Properties (Variables) */
+:root {
+	--color-primary: #0a0a0a;
+	--color-secondary: #2563eb;
+	--color-accent: #3b9e6e;
+	--color-text: #ffffff;
+	--color-text-light: rgba(255, 255, 255, 0.7);
+	--color-background: #0a0a0a;
+	--color-white: #ffffff;
+	--color-dark: #000000;
+
+	--font-heading: "Cormorant Garamond", Georgia, serif;
+	--font-body: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
+
+	--spacing-xs: 0.5rem;
+	--spacing-sm: 1rem;
+	--spacing-md: 2rem;
+	--spacing-lg: 4rem;
+	--spacing-xl: 6rem;
+
+	--transition: all 0.3s ease;
+}
+
+/* ============================================
+   CSS RESET
+   ============================================ */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
 html {
 	scroll-behavior: smooth;
 }
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
+/* ============================================
+   BASE STYLES
+   ============================================ */
+body {
+	font-family: var(--font-body);
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.7;
+	color: var(--color-text);
+	background-color: var(--color-background);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
 h1,
 h2,
 h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+h4 {
+	font-family: var(--font-heading);
+	font-weight: 500;
+	line-height: 1.2;
+	color: var(--color-white);
 }
 
-body {
-	font-family: Arial, sans-serif;
-	font-size: 1.2rem;
-	line-height: 1.5;
-	color: #333;
-	background-color: #f0f0f0;
+h1 {
+	font-size: clamp(2.5rem, 8vw, 5rem);
+	font-weight: 400;
+	letter-spacing: 0.02em;
+	line-height: 1.1;
 }
 
-nav {
-	padding: 2%;
+h2 {
+	font-size: clamp(1.8rem, 4vw, 2.8rem);
+	margin-bottom: var(--spacing-md);
+	position: relative;
+	display: inline-block;
+}
+
+h2::after {
+	content: "";
+	position: absolute;
+	bottom: -8px;
+	left: 0;
+	width: 60px;
+	height: 2px;
+	background-color: var(--color-secondary);
+}
+
+h3 {
+	font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+	font-weight: 600;
+	margin-bottom: var(--spacing-sm);
+	color: #60a5fa;
+}
+
+p {
+	font-weight: 300;
+	margin-bottom: var(--spacing-sm);
+	max-width: 65ch;
+}
+
+a {
+	color: var(--color-secondary);
+	text-decoration: none;
+	transition: var(--transition);
+}
+
+a:hover {
+	color: #60a5fa;
 }
 
 ul {
 	list-style: none;
 }
 
-h1 {
-	font-size: 3rem;
-	font-weight: bold;
-	text-align: center;
-	margin-bottom: 2%;
-	font-family: "Imperial Script", cursive;
-	font-weight: 400;
-	font-style: normal;
-	line-height: 0.9;
-	letter-spacing: -0.02em;
+/* ============================================
+   NAVIGATION
+   ============================================ */
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	background-color: rgba(0, 0, 0, 0.95);
+	backdrop-filter: blur(10px);
+	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
-footer {
-	text-align: center;
-	background-color: #333;
-	padding: 3% 5%;
-	color: white;
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--spacing-sm) var(--spacing-md);
+	max-width: 1400px;
+	margin: 0 auto;
 }
 
-form {
+#menu-icon,
+#menu-close-icon {
+	width: 28px;
+	height: 28px;
+	cursor: pointer;
+	opacity: 0.9;
+	transition: var(--transition);
+	filter: invert(1);
+}
+
+#menu-icon:hover,
+#menu-close-icon:hover {
+	opacity: 1;
+}
+
+#nav-list {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	background-color: var(--color-dark);
+	padding: var(--spacing-md);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#nav-list li {
+	padding: var(--spacing-sm) 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#nav-list li:last-child {
+	border-bottom: none;
+}
+
+#nav-list li a {
+	font-size: 0.95rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: var(--color-white);
+}
+
+#nav-list li a:hover {
+	color: var(--color-secondary);
+}
+
+/* ============================================
+   HERO SECTION (#wedding)
+   ============================================ */
+#wedding {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	padding: var(--spacing-xl) var(--spacing-md);
+	text-align: center;
+	color: var(--color-white);
+	background-color: var(--color-dark);
+	background-image: linear-gradient(rgba(5, 15, 30, 0.7), rgba(5, 15, 30, 0.7)),
+		url("images/waves.gif");
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
 }
 
-p {
-	font-weight: lighter;
-	line-height: 1.5rem;
+#wedding h1 {
+	color: var(--color-white);
+	margin-bottom: var(--spacing-md);
+	text-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
 }
 
-ul li a {
-	text-decoration: none;
-	color: #333;
-	font-size: 1.2rem;
+#wedding p {
+	font-size: clamp(1rem, 2vw, 1.2rem);
+	font-weight: 300;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	margin-bottom: var(--spacing-xs);
+	opacity: 0.9;
+	max-width: none;
 }
 
+#wedding p:last-of-type {
+	margin-top: var(--spacing-md);
+}
+
+#wedding a {
+	display: inline-block;
+	padding: var(--spacing-sm) var(--spacing-md);
+	border: 2px solid var(--color-secondary);
+	background-color: var(--color-secondary);
+	color: var(--color-white);
+	font-size: 0.9rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	transition: var(--transition);
+}
+
+#wedding a:hover {
+	background-color: #1d4ed8;
+	border-color: #1d4ed8;
+	color: var(--color-white);
+}
+
+/* ============================================
+   CONTENT SECTIONS
+   ============================================ */
 section:not(#wedding) {
-	color: black;
-	padding: 2% 10% 4%;
-	border-radius: 10px;
+	padding: var(--spacing-xl) var(--spacing-md);
+	max-width: 1000px;
+	margin: 0 auto;
 }
 
-section:not(#wedding) div {
-	padding-bottom: 5%;
+section:not(#wedding):nth-child(odd) {
+	background-color: rgba(37, 99, 235, 0.05);
 }
 
-section:not(#wedding) h2 {
-	font-size: 2rem;
-	font-weight: normal;
-	letter-spacing: -0.01em;
+/* Our Story Section */
+#our-story {
+	text-align: center;
 }
 
-section:not(#wedding) h3 {
-	font-size: 1.5rem;
-	font-weight: semi-bold;
-	font-style: italic;
+#our-story h2::after {
+	left: 50%;
+	transform: translateX(-50%);
 }
 
-section:not(#wedding) ul {
-	margin-left: 5%;
+#our-story p {
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.1rem;
 }
 
-section:not(#wedding) p {
-	padding-bottom: 5%;
+/* Event Section */
+#event p {
+	padding-left: var(--spacing-md);
+	border-left: 3px solid var(--color-secondary);
+	margin-bottom: var(--spacing-md);
 }
 
+/* Party Section */
+#party article {
+	display: grid;
+	gap: var(--spacing-lg);
+	margin-top: var(--spacing-md);
+}
+
+#party article > div {
+	padding: var(--spacing-md);
+	background-color: rgba(37, 99, 235, 0.1);
+	border-radius: 8px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+	border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+#party ul {
+	padding-top: var(--spacing-sm);
+}
+
+#party li {
+	padding: var(--spacing-xs) 0;
+	font-weight: 300;
+	color: var(--color-text-light);
+}
+
+/* FAQ Section */
+#faq h3 {
+	margin-top: var(--spacing-md);
+}
+
+#faq h3:first-of-type {
+	margin-top: var(--spacing-sm);
+}
+
+#faq p {
+	color: var(--color-text-light);
+}
+
+/* ============================================
+   RSVP FORM
+   ============================================ */
+#rsvp {
+	background-color: #0c1929 !important;
+	color: var(--color-white);
+	max-width: none;
+	text-align: center;
+}
+
+#rsvp h2 {
+	color: var(--color-white);
+}
+
+#rsvp h2::after {
+	background-color: var(--color-secondary);
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#rsvp-form {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	max-width: 450px;
+	margin: var(--spacing-md) auto 0;
+}
+
+#rsvp-form p {
+	margin-bottom: var(--spacing-sm);
+	font-weight: 300;
+	letter-spacing: 0.05em;
+	max-width: none;
+}
+
+#rsvp-form .form-control {
+	padding: var(--spacing-sm) var(--spacing-md);
+	border: none;
+	border-radius: 4px;
+	font-family: var(--font-body);
+	font-size: 0.95rem;
+	background-color: rgba(255, 255, 255, 0.95);
+	transition: var(--transition);
+}
+
+#rsvp-form .form-control:focus {
+	outline: none;
+	box-shadow: 0 0 0 3px var(--color-secondary);
+}
+
+#rsvp-form .form-control::placeholder {
+	color: var(--color-text-light);
+	font-weight: 300;
+}
+
+#submit-btn {
+	padding: var(--spacing-sm) var(--spacing-md);
+	margin-top: var(--spacing-sm);
+	background-color: var(--color-secondary);
+	border: none;
+	border-radius: 4px;
+	font-family: var(--font-body);
+	font-size: 0.9rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+	cursor: pointer;
+	transition: var(--transition);
+}
+
+#submit-btn:hover:not(:disabled) {
+	background-color: #1d4ed8;
+	transform: translateY(-2px);
+}
+
+#submit-btn:disabled {
+	background-color: rgba(255, 255, 255, 0.2);
+	color: rgba(255, 255, 255, 0.5);
+	cursor: not-allowed;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+	text-align: center;
+	background-color: #050a12;
+	padding: var(--spacing-md);
+	color: rgba(96, 165, 250, 0.7);
+	font-size: 0.85rem;
+	font-weight: 300;
+	letter-spacing: 0.05em;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
 .hidden {
-	display: none;
+	display: none !important;
 }
 
 .block {
@@ -185,37 +430,50 @@ section:not(#wedding) p {
 	flex-direction: column;
 }
 
-#wedding {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background-color: black;
-	background-image: url("images/waves.gif");
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	height: 100vh;
-	width: 100%;
-	color: white;
-}
-
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
 @media (min-width: 768px) {
-
-	/* Styles for tablet, laptop, desktop */
 	nav {
-		padding: 1%;
+		padding: var(--spacing-sm) var(--spacing-lg);
 	}
 
-	form {
-		width: 30%;
+	#menu-icon,
+	#menu-close-icon {
+		display: none;
+	}
+
+	#nav-list {
+		position: static;
+		display: flex !important;
+		gap: var(--spacing-md);
+		padding: 0;
+		background: transparent;
+		box-shadow: none;
+	}
+
+	#nav-list li {
+		padding: 0;
+		border: none;
+	}
+
+	section:not(#wedding) {
+		padding: var(--spacing-xl) var(--spacing-lg);
+	}
+
+	#party article {
+		grid-template-columns: repeat(3, 1fr);
 	}
 
 	.flex {
 		flex-direction: row;
 		justify-content: center;
-		gap: 5%;
-		width: 50%;
-		margin-left: auto;
+		gap: var(--spacing-lg);
+	}
+}
+
+@media (min-width: 1024px) {
+	section:not(#wedding) {
+		padding: var(--spacing-xl);
 	}
 }
