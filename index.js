@@ -18,6 +18,12 @@ function closeNav() {
 menuIcon.addEventListener("click", openNav);
 menuCloseIcon.addEventListener("click", closeNav);
 
+menuList.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth < 768) closeNav();
+  });
+});
+
 //window resize and load listener to remove hidden class
 function adjustNav() {
   if (window.innerWidth >= 768) {
